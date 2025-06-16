@@ -1,31 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enetxeba <enetxeba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/11 11:24:22 by enetxeba          #+#    #+#             */
-/*   Updated: 2025/06/12 09:49:04 by enetxeba         ###   ########.fr       */
+/*   Created: 2025/06/11 12:54:59 by enetxeba          #+#    #+#             */
+/*   Updated: 2025/06/16 09:04:13 by enetxeba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
+#ifndef FRAGTRAP_HPP
+#define FRAGTRAP_HPP
 
-int main (int argc, char **argv)
+#include "ClapTrap.hpp"
+
+class FragTrap: virtual public ClapTrap
 {
-    (void) argc;
-    (void) argv;
-    ClapTrap robot1;
-    ScavTrap *robot2 = new ScavTrap("memo");
-    robot1.set_name("bobo");
-    robot1.attack("memo");
-    robot2->takeDamage(0);
-    robot2->attack("bobo");
-    robot1.takeDamage(0);
-    robot1.beRepaired(5);
-    robot2->beRepaired(1);
-    robot2->guardGate();
-    delete robot2;
-}
+    public:
+        FragTrap();
+        FragTrap(std::string name);
+        ~FragTrap();
+        FragTrap(const FragTrap& other);
+        FragTrap& operator=(const FragTrap& other);
+        void highFivesGuys(void);
+        void set_def_health();
+        void set_def_energy();
+        void set_def_damage();
+    private:
+
+        
+};
+
+#endif

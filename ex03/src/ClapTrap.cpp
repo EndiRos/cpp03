@@ -6,21 +6,29 @@
 /*   By: enetxeba <enetxeba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 09:03:59 by enetxeba          #+#    #+#             */
-/*   Updated: 2025/06/12 09:08:28 by enetxeba         ###   ########.fr       */
+/*   Updated: 2025/06/16 09:10:13 by enetxeba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap():  _energy(10), _health(10), _name("unamed"), _damage(0)
+ClapTrap::ClapTrap():   _name("unamed")
 {
-    _max_health = _health;
+    set_def_energy ();
+    set_def_damage();
+    set_def_health();
+    set_maxhealth(get_health());
+    set_name("unamed");
     std::cout << "ClampTrap was created, but need bautism" << std::endl;
     show_info();
 }
 
-ClapTrap::ClapTrap(std::string name) : _energy(10), _health(10), _name(name), _damage(0)
+ClapTrap::ClapTrap(std::string name) : _name(name)
 {
+    set_energy (10);
+    set_health(10);
+    set_damage(0);
+    set_maxhealth(10);
     std::cout << "ClapTrap named "<< get_name() << " was created" << std::endl;
     show_info();
 }
@@ -139,4 +147,17 @@ void ClapTrap::show_info()
                 << " Energy: " << _energy
                 << " Damage: " << _damage
                 << std::endl;
+}
+
+void ClapTrap::set_def_health()
+{
+    _health = 10;
+}
+void ClapTrap::set_def_energy()
+{
+    _energy = 10;
+}
+void ClapTrap::set_def_damage()
+{
+    _damage = 0;
 }

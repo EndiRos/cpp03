@@ -6,7 +6,7 @@
 /*   By: enetxeba <enetxeba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 08:47:28 by enetxeba          #+#    #+#             */
-/*   Updated: 2025/06/12 08:48:13 by enetxeba         ###   ########.fr       */
+/*   Updated: 2025/06/16 09:09:06 by enetxeba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,10 @@ class ClapTrap
         void show_info();
         void set_maxhealth(unsigned int health);
         unsigned int get_maxhealth();
-    private:
+        void set_def_health();
+        void set_def_energy();
+        void set_def_damage();
+    protected:
         unsigned int _energy;
         unsigned int _health;
         std::string  _name;

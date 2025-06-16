@@ -1,9 +1,9 @@
 CX=g++
 XXFLAGS = -Werror -Wextra -Wall -std=c++98 -g
 INCLUDE = -I include
-SRC = src/ClapTrap.cpp src/main.cpp src/ScavTrap.cpp
+SRC = src/ClapTrap.cpp src/main.cpp src/FragTrap.cpp
 OBJ = $(SRC:%.cpp=%.o)
-NAME= claptrap
+NAME= FragTrap
 
 all : $(NAME)
 
